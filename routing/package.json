@@ -1,8 +1,8 @@
 {
   "name": "@woosti/rxjs-router",
-  "version": "0.0.1",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "version": "0.0.2",
+  "main": "./lib/index.js",
+  "types": "./lib/",
   "author": "Matt DeKrey",
   "license": "MIT",
   "scripts": {
@@ -12,12 +12,23 @@
     "lint": "tslint --project ."
   },
   "jest": {
-    "moduleFileExtensions": ["ts", "js"],
-    "modulePaths": ["<rootDir>/src/", "<rootDir>/node_modules/"],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "modulePaths": [
+      "<rootDir>/src/",
+      "<rootDir>/node_modules/"
+    ],
     "transform": {
       "^.+\\.ts$": "ts-jest"
     },
-    "testMatch": ["**/*.test.(ts|js)"]
+    "testMatch": [
+      "**/*.test.(ts|js)"
+    ]
+  },
+  "optionalDependencies": {
+    "@types/ramda": "0.25.6"
   },
   "peerDependencies": {
     "rxjs": "^5.5.3"
@@ -25,8 +36,6 @@
   "devDependencies": {
     "@types/jest": "^21.1.8",
     "@types/node": "8.0.57",
-    "@types/ramda": "0.25.6",
-    "@types/shortid": "0.0.29",
     "concurrently": "3.5.1",
     "jest": "^21.3.0-beta.13",
     "left-pad": "1.2.0",
