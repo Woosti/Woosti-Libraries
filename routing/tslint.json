@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "ban": [
+      true,
+      {
+        "name": ["shortid"],
+        "message": "use `utils/uid`'s `uid` instead."
+      },
+      { "name": ["uuid"], "message": "use `utils/uid`'s `uid` instead." }
+    ]
+  }
+}
