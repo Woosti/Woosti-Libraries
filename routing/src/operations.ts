@@ -7,7 +7,7 @@ import {
   toPairs,
   values,
   zip
-} from "utils/ramda";
+} from "./utils/ramda";
 import { Route, isAlias } from "./route-types/index";
 import { Routes, IRoutingState } from "./types";
 
@@ -103,7 +103,7 @@ export function buildState<T>(
     return {
       routeName: null,
       route: null,
-      remainingPath: null,
+      remainingPath: routing.remainingPath,
       componentPath,
       routeVariables
     };

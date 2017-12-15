@@ -3,7 +3,7 @@ export interface ConcreteRoute<T> {
   type: typeof RouteTypeConcrete;
   data: T;
 }
-export function RouteConcrete<T>(data: T): ConcreteRoute<T> {
+export function ConcreteRoute<T>(data: T): ConcreteRoute<T> {
   return { type: RouteTypeConcrete, data };
 }
 export function isConcrete(

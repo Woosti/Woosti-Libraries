@@ -2,3 +2,4 @@ node_modules
 wwwroot
 src/csharp
 lib
+coverage

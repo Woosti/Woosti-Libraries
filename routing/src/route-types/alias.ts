@@ -3,7 +3,7 @@ export interface AliasRoute {
   type: typeof RouteTypeAlias;
   alias: string;
 }
-export function RouteAlias(alias: string): AliasRoute {
+export function AliasRoute(alias: string): AliasRoute {
   return { type: RouteTypeAlias, alias };
 }
 

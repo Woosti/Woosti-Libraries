@@ -2,9 +2,7 @@ import { windowUrlChanged } from "./window-base";
 import { buildDefaultState } from "../operations";
 import { buildStrategy, IRoutingStrategy } from "../strategy";
 
-const windowHash = windowUrlChanged.map(
-  () => window.location.hash.slice(1) || "/"
-);
+const windowHash = windowUrlChanged.map(() => window.location.hash.slice(1));
 
 function navigateHash({
   url,
