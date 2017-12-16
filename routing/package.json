@@ -1,6 +1,6 @@
 {
   "name": "@woosti/rxjs-router",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "./lib/index.js",
   "types": "./lib/",
   "author": "Matt DeKrey",
@@ -42,9 +42,10 @@
     "ramda": "0.25.0",
     "rxjs": "5.5.3",
     "ts-jest": "^21.2.4",
-    "tslib": "1.8.0",
     "tslint": "5.8.0",
     "typescript": "2.6.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "tslib": "^1.8.0"
+  }
 }
