@@ -1,6 +1,6 @@
 {
   "name": "@woosti/rxjs-router",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "./lib/index.js",
   "types": "./lib/",
   "author": "Matt DeKrey",
@@ -31,7 +31,8 @@
     "@types/ramda": "0.25.6"
   },
   "peerDependencies": {
-    "rxjs": "^5.5.3"
+    "rxjs": "^5.5.3",
+    "ramda": "^0.25.0"
   },
   "devDependencies": {
     "@types/jest": "^21.1.8",
