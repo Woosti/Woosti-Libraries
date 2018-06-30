@@ -5,7 +5,7 @@ not assume any particular front-end framework to support it.
 
 ## Work to do:
 
-* [ ] Unit tests
-* [ ] Examples
-* [ ] Better scripts to handle publishing
-* [ ] Better scripts to handle watching
+- [x] Unit tests
+- [ ] Examples
+- [ ] Better scripts to handle publishing
+- [ ] Better scripts to handle watching

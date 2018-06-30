@@ -29,6 +29,9 @@ describe("buildPath", () => {
     it("when given an absolute path", () => {
       expect(rootBuilder("/test")).toBe("/test");
     });
+    it("when given an absolute path with a parent path", () => {
+      expect(rootBuilder("/../test")).toBe("/../test");
+    });
   });
 
   describe("can handle sub paths", () => {
@@ -36,8 +39,14 @@ describe("buildPath", () => {
     it("when given a relative path", () => {
       expect(rootBuilder("test")).toBe("/some/path/test");
     });
-    it("when given a parent path, it should not fail", () => {
-      expect(rootBuilder("../test")).toBe("/some/path/../test");
+    it("when given a parent path, it should give the appropriate result", () => {
+      expect(rootBuilder("../test")).toBe("/some/test");
+    });
+    it("when given a second parent path, it should give the appropriate result", () => {
+      expect(rootBuilder("../../test")).toBe("/test");
+    });
+    it("when given too many parent paths, it should stop going", () => {
+      expect(rootBuilder("../../../test")).toBe("/../test");
     });
     it("when given an absolute path", () => {
       expect(rootBuilder("/test")).toBe("/test");

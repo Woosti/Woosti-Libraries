@@ -11,13 +11,25 @@ import {
 import { Route, isAlias } from "./route-types/index";
 import { Routes, IRoutingState } from "./types";
 
+const handleParentDirectory = (path: string) => {
+  let shouldContinue = false;
+  do {
+    const newPath = path.replace(/(^|\/)[^/]+\/\.\./, "");
+    shouldContinue = newPath !== path;
+    path = newPath;
+  } while (shouldContinue);
+  return path;
+};
+
 export const buildPath = (componentPath: string | null) => (path: string) =>
-  path[0] === "/"
-    ? path
-    : `/${[componentPath, path]
-        .filter(Boolean)
-        .map(trimSlashes)
-        .join("/")}`;
+  handleParentDirectory(
+    path[0] === "/"
+      ? path
+      : `/${[componentPath, path]
+          .filter(Boolean)
+          .map(trimSlashes)
+          .join("/")}`
+  );
 
 export function trimSlashes(path: string) {
   return path.replace(/^\/+/, "").replace(/\/+$/, "");
@@ -108,7 +120,10 @@ export function buildState<T>(
       routeVariables
     };
   }
-  const { route: { routeName, variables, route }, matchExp } = found;
+  const {
+    route: { routeName, variables, route },
+    matchExp
+  } = found;
 
   const matchedPath = trimSlashes(matchExp[0]);
   const localVariables = fromPairs(
